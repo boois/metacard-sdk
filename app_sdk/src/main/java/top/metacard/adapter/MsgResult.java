@@ -32,9 +32,6 @@ public class MsgResult {
         m.err = errorDetail;
         return m;
     }
-    public static MsgResult err(String errInfo){
-        return new MsgResult("err",errInfo,null);
-    }
     public static MsgResult errMsg(String msg){
         return new MsgResult(msg,null,null);
     }
