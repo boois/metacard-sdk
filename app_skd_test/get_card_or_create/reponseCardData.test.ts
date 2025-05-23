@@ -21,7 +21,6 @@ describe('get_card_or_create', () => {
             "bin":"495963"
         }
         let r = await callFc(headers,data);
-        console.log(r);
         expect(r.msg).toBe("ok");
         expect(Array.isArray(r.result.wallets)).toBe(true);
         expect(r.result.wallets.length > 0).toBe(true);
@@ -51,6 +50,12 @@ describe('get_card_or_create', () => {
         expect(typeof r.result.is_freezen).toBe('boolean');
     });        
     test('测试2-用户卡不可用-返回tips提示', () => {
+        let headers = {'x-test':'2'}
+        let data = {
+            "user_id":"A001",
+            "card_id":"Card001",
+            "bin":"495963"
+        }
         expect(true).toBe(true);
         expect(1).toBe(1);
         expect('hello').toBe('hello');

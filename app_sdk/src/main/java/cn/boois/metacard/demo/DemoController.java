@@ -33,7 +33,6 @@ public class DemoController {
         String bin = adapter.bin; // bin直接显式可用
 
         /*
-         * 其他可能的参数需要通过requestBody自取,根据前端提供的配置表获取
          * adapter.getValue("meta-key");// 先从Meta中获取,没找到再从Kyc数据中获取
          * adapter.getMetaValue("meta-key") //明确从Meta中获取
          * adapter.getKycValue("kyc-key") // 明确从Kyc数据中获取防止被覆盖
