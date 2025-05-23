@@ -12,7 +12,8 @@ public class MsgResult {
     }
     public String msg = "ok";
     public String info = "success";
-    public Object result = null; 
+    public String err = ""; // 具体的错误信息
+    public Object result = null;
     public String toJSON(){
         ObjectMapper objectMapper = new ObjectMapper();
         try{
@@ -25,6 +26,11 @@ public class MsgResult {
                     }
                     """;
         }
+    }
+    public static MsgResult errByDetail(String errMsg,String errInfo,String errorDetail){
+        var m = new MsgResult(errMsg,errInfo,null);
+        m.err = errorDetail;
+        return m;
     }
     public static MsgResult err(String errInfo){
         return new MsgResult("err",errInfo,null);
