@@ -168,8 +168,8 @@ public class GetCardOrCreateAdapter {
         return MsgResult.errMsg("issue_card_failed", tips);
     }
 
-    public MsgResult responseOtherError(String msg, String info) {
-        return MsgResult.errMsg(msg, info);
+    public MsgResult responseOtherError(String msg, String info,String errDetail) {
+        return MsgResult.errByDetail(msg, info,errDetail);
     }
 
     // 先从Meta中取,然后再从KycValue中取

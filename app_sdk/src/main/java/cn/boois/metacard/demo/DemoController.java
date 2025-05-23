@@ -110,7 +110,7 @@ public class DemoController {
         }
         //测试9-未考虑到的错误
         if (headers.get("x-test").equals("9")){
-            return adapter.responseOtherError("unknown_error", "unknown error!").toJSON();
+            return adapter.responseOtherError("unknown_error", "unknown error!","more error detail!").toJSON();
         }
         return MsgResult.errMsg("no_action", "not return any result!"  ).toJSON();
       
