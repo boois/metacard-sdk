@@ -150,16 +150,26 @@ public class GetCardOrCreateAdapter {
         return MsgResult.ok(result);
     }
 
-    public MsgResult responseKycPending(String tips) {
-        return MsgResult.ok();
+    public MsgResult responseCardInvalidated() {
+        return MsgResult.errMsg("card_invalidated", "card is invalidated!");
+    }
+
+    public MsgResult responseKycPending() {
+        return MsgResult.errMsg("card_kyc_pending", "card is pending!");
     }
 
     public MsgResult responseKCYNotCompleted(String tips) {
-        return MsgResult.ok();
+        return MsgResult.errMsg("kyc_not_completed", tips);
+    }
+    public MsgResult responseCardCountLimit() {
+        return MsgResult.errMsg("card_count_limit", "card count limit!");
+    }
+    public MsgResult responseIssueCardFailed(String tips) {
+        return MsgResult.errMsg("issue_card_failed", tips);
     }
 
     public MsgResult responseOtherError(String msg, String info) {
-        return MsgResult.ok();
+        return MsgResult.errMsg(msg, info);
     }
 
     // 先从Meta中取,然后再从KycValue中取
