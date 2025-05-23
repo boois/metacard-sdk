@@ -11,14 +11,16 @@ async function callFc(headers={},data={}){
     })
     return response.json()
 }
-
+let kyc_struct = [{"key": "sumsub", "type": "sumsub_id", "value": "sadfasdfsdf"}, {"key": "first_name", "type": "input", "value": ""}]
+       
 describe('get_card_or_create', () => {
     test('测试1-用户卡正常-返回正常的卡片数据', async () => {
         let headers = {'x-test':'1'}
         let data = {
             "user_id":"A001",
             "card_id":"Card001",
-            "bin":"495963"
+            "bin":"495963",
+            "kyc_struct":kyc_struct
         }
         let r = await callFc(headers,data);
         expect(r.msg).toBe("ok");

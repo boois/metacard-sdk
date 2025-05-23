@@ -161,9 +161,11 @@ public class GetCardOrCreateAdapter {
     public MsgResult responseKCYNotCompleted(String tips) {
         return MsgResult.errMsg("kyc_not_completed", tips);
     }
+
     public MsgResult responseCardCountLimit() {
         return MsgResult.errMsg("card_count_limit", "card count limit!");
     }
+
     public MsgResult responseIssueCardFailed(String tips) {
         return MsgResult.errMsg("issue_card_failed", tips);
     }
@@ -174,14 +176,15 @@ public class GetCardOrCreateAdapter {
 
     // 先从Meta中取,然后再从KycValue中取
     public MsgResult getValue(String key) {
-        return MsgResult.ok(null);
+
+        return MsgResult.errMsg(null);
     }
 
     public MsgResult getMetaValue(String key) {
-        return MsgResult.ok(null);
+        return MsgResult.errMsg(null);
     }
 
     public MsgResult getKycValue(String key) {
-        return MsgResult.ok(null);
+        return MsgResult.errMsg(null);
     }
 }

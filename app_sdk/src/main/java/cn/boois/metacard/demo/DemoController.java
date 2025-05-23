@@ -51,6 +51,7 @@ public class DemoController {
                 GetCardOrCreateAdapter.WalletType.ETH,
                 "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
                 "-100.0"));
+
         // 增加fee的展示字段，可选
         var feeDisplayKVs = new ArrayList<GetCardOrCreateAdapter.feeKV>();
         feeDisplayKVs.add(new GetCardOrCreateAdapter.feeKV("topup fee","0.006%"));
